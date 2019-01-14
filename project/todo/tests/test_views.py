@@ -1,3 +1,4 @@
+import mock
 from django.test import TestCase
 from rest_framework.test import APITestCase
 from todo.factories import TaskFactory
@@ -20,7 +21,8 @@ class StatusTest(APITestCase):
 
 class TaskViewSetTest(APITestCase):
 
-    def test_post_task(self):
+    @mock.patch("todo.domain.notify")
+    def test_post_task(self, *args, **kwargs):
         task = TaskFactory()
         task_json =  {
             "title": task.title,

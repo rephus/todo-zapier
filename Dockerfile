@@ -21,7 +21,8 @@ RUN pip install \
     django-filter==2.0.0 \ 
     faker==1.0.1 \ 
     factory-boy==2.11.1 \ 
-    requests==2.21.0
+    requests==2.21.0 \ 
+    mock==2.0.0
 
 CMD  python init.py && python manage.py runserver 0.0.0.0:8000
 #CMD python entrypoint.py
